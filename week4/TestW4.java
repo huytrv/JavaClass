@@ -93,11 +93,6 @@ public class TestW4 {
         assertEquals(result5, -453);
     }
     @Test 
-    public void testBMI(){
-        String result1 = BMI.evaluateBmi(50, 1.67);
-        assertEquals(result1, "Thiếu cân");
-    }
-    @Test 
     public void testBMI1(){
         String result1 = BMI.evaluateBmi(50, 1.87);
         assertEquals(result1, "Thiếu cân");
@@ -119,7 +114,7 @@ public class TestW4 {
     }
     @Test 
     public void testBMI5(){
-        String result5 = BMI.evaluateBmi(80, 1.77);
-        assertEquals(result5, "Béo phì");
+        String result5 = BMI.evaluateBmi(75, 1.77);
+        assertEquals(result5, "Thừa cân");
     }
 }
