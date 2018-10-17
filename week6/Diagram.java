@@ -1,29 +1,18 @@
 package week6;
 
+import java.util.ArrayList;
+
 public class Diagram {
-	protected boolean fill;
-	protected String color;
-	public Diagram() {};
-	public Diagram(boolean fill, String color) {
-		setFill(fill);
-		setColor(color);
+	private ArrayList<Layer> layerList = new ArrayList<Layer>();
+	public void add(Layer layer) {
+		layerList.add(layer);
 	}
-	public boolean isFill() {
-		return fill;
+	public Layer get(int i) {
+		return layerList.get(i);
 	}
-	public void setFill(boolean fill) {
-		this.fill = fill;
-	}
-	public String getColor() {
-		return color;
-	}
-	public void setColor(String color) {
-		this.color = color;
-	}
-	public void diagramDelCircle() {
-		Diagram diaCircle = new Diagram();
-		if (diaCircle instanceof Triangle) {
-			diaCircle = null;
+	public void deleteCircle() {
+		for(int i=0; i<layerList.size(); i++) {
+			layerList.get(i).delCircle();
 		}
 	}
 }

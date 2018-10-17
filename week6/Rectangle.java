@@ -1,17 +1,13 @@
 package week6;
 
-public class Rectangle extends Shape{
-	protected double width = 1.0, length = 1.0;
-	public Rectangle() {
-		setWidth(1.0);
-		setLength(1.0);
-	}
+import java.awt.*;
+
+class Rectangle extends Shape{
+	protected double width, length;
+	public void paintComponent(Graphics g) {
+		  g.drawRect(50, 50, 200, 100);
+	  }
 	public Rectangle(double width, double length) {
-		setWidth(width);
-		setLength(length);
-	}
-	public Rectangle(double width, double length, boolean fill, String color, String font, boolean isFilled) {
-		super(fill, color, font, isFilled);
 		setWidth(width);
 		setLength(length);
 	}
@@ -34,6 +30,6 @@ public class Rectangle extends Shape{
 		return 2 * (width + length);
 	}
 	public String toString() {
-		return ("Rectangle:\nWidth: "+ getWidth() + "\nLength: " + getLength());
+		return ("Rectangle:\nWidth: "+ getWidth() + "\nLength: " + getLength() + "\n\n");
 	}
 }

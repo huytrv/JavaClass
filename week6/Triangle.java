@@ -1,15 +1,19 @@
 package week6;
 
-public class Triangle extends Shape{
+import java.awt.*;
+
+class Triangle extends Shape{
+
+	public void paintComponent(Graphics g) {
+		  int xPoly[] = {100,180,30};
+	      int yPoly[] = {100,180,180};
+
+	      Polygon poly = new Polygon(xPoly, yPoly, xPoly.length);
+		  g.drawPolygon(poly);
+	  }
 	protected double a, b, c;
 	public Triangle() {};
 	public Triangle(double a, double b, double c) {
-		setA(a);
-		setB(b);
-		setC(c);
-	}
-	public Triangle( boolean fill, String color, String font, boolean isFilled, double a, double b, double c) {
-		super(fill, color, font, isFilled);
 		setA(a);
 		setB(b);
 		setC(c);
@@ -32,10 +36,14 @@ public class Triangle extends Shape{
 	public void setC(double c) {
 		this.c = c;
 	}
-	public double Perimeter() {
+	public double getPerimeter() {
 		return a+b+c;
 	}
 	public String toString() {
-		return ("Triangle: " + "a=" + getA() + ", b=" + getB() + ", c=" + getC());
+		return ("Triangle: " + "a=" + getA() + ", b=" + getB() + ", c=" + getC() + "\n\n");
 	}
+	public double getArea() {
+		return 0;
+	}
+
 }

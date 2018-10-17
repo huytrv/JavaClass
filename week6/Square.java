@@ -1,15 +1,16 @@
 package week6;
 
-public class Square extends Rectangle{
+import java.awt.*;
+
+class Square extends Shape{
+	public void paintComponent(Graphics g) {
+		  g.drawRect(80, 50, 100, 100);
+	  }
 	protected double side;
 	public Square() {
 		setSide(1.0);
 	}
 	public Square(double side) {
-		setSide(side);
-	}
-	public Square(double side, boolean fill, String color, String font, boolean isFilled) {
-		super(side, side, fill, color, font, isFilled);
 		setSide(side);
 	}
 	public double getSide() {
@@ -25,6 +26,6 @@ public class Square extends Rectangle{
 		return 2 * side;
 	}
 	public String toString() {
-		return ("Square:\nside: "+ getSide());
+		return ("Square:\nside: "+ getSide() + "\n\n");
 	}
 }

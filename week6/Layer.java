@@ -1,29 +1,31 @@
 package week6;
 
+import java.util.*;
+
 public class Layer extends Diagram{
-	protected String font;
-	public Layer() {};
-	public Layer(boolean fill, String color, String font) {
-		super(fill, color);
-		setFont(font);
+	private ArrayList<Shape> shapeList = new ArrayList<Shape>();
+	
+	public void add(Shape shape) {
+		shapeList.add(shape);
 	}
-	public String getFont() {
-		return font;
+	public Shape get(int i) {
+		return shapeList.get(i);
 	}
-	public void setFont(String font) {
-		this.font = font;
+	public int size() {
+		return shapeList.size();
 	}
-	public static void layerDelTriangle() {
-		Layer layer = new Layer();
-		if(layer instanceof Triangle) {
-			layer = null;
+	public void delTriangle() {
+		for(int i=0; i<shapeList.size(); i++) {
+			Layer triangle = shapeList.get(i);
+			if (triangle instanceof Triangle)
+				shapeList.remove(i);
 		}
 	}
-	public static void main(String[] args) {
-		Triangle tri = new Triangle(3, 4, 5);
-		Layer layer = new Layer();
-		tri = (Triangle) layer;
-		layerDelTriangle();
-		System.out.print(tri.toString() + "\nPerimeter: " + tri.Perimeter());
+	public void delCircle() {
+		for(int i=0; i<shapeList.size(); i++) {
+			Layer circle = shapeList.get(i);
+			if (circle instanceof Circle)
+				shapeList.remove(i);
+		}
 	}
 }
