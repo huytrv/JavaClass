@@ -2,34 +2,44 @@ package week6;
 
 import java.awt.*;
 
+@SuppressWarnings("serial")
 class Rectangle extends Shape{
-	protected double width, length;
-	public void paintComponent(Graphics g) {
-		  g.drawRect(50, 50, 200, 100);
-	  }
-	public Rectangle(double width, double length) {
-		setWidth(width);
-		setLength(length);
+	protected int width, length;
+    // draw the rectangle
+	@Override
+	protected void paintComponent(Graphics g) {
+	      super.paintComponent(g);
+	      g.setColor(Color.RED);
+	      g.drawRect(50, 50, getwidth(), getlength());
+	      //String s = String.valueOf(getArea()) + "m2";
+	      //g.drawString(s, 120, 90);
 	}
-	public double getWidth() {
+	public Rectangle(int width, int length) {
+		setwidth(width);
+		setlength(length);
+	}
+	public int getwidth() {
 		return width;
 	}
-	public void setWidth(double width) {
+	public void setwidth(int width) {
 		this.width = width;
 	}
-	public double getLength() {
+	public int getlength() {
 		return length;
 	}
-	public void setLength(double length) {
+	public void setlength(int length) {
 		this.length = length;
 	}
+	@Override
 	public double getArea() {
 		return width * length;
 	}
+	@Override
 	public double getPerimeter() {
 		return 2 * (width + length);
 	}
+	@Override
 	public String toString() {
-		return ("Rectangle:\nWidth: "+ getWidth() + "\nLength: " + getLength() + "\n\n");
+		return ("Rectangle:\nWidth: "+ getwidth() + "\nLength: " + getlength() + "\n\n");
 	}
 }

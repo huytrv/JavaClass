@@ -2,21 +2,25 @@ package week6;
 
 import java.awt.*;
 
+@SuppressWarnings("serial")
 class Square extends Shape{
+	protected int side;
+	
 	public void paintComponent(Graphics g) {
-		  g.drawRect(80, 50, 100, 100);
-	  }
-	protected double side;
-	public Square() {
-		setSide(1.0);
+		  super.paintComponent(g);
+		  g.setColor(Color.GREEN);
+		  g.drawRect(80, 50, getSide(), getSide());
+		  //String s = String.valueOf(getArea()) + "m2";
+		  //g.drawString(s, 100, 100);
 	}
-	public Square(double side) {
+	
+	public Square(int side) {
 		setSide(side);
 	}
-	public double getSide() {
+	public int getSide() {
 		return side;
 	}
-	public void setSide(double side) {
+	public void setSide(int side) {
 		this.side = side;
 	}
 	public double getArea() {
